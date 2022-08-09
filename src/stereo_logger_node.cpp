@@ -21,7 +21,7 @@ StereoLoggerNode::StereoLoggerNode(const std::string node_name, rclcpp::NodeOpti
     frame_right_sub = this->create_subscription<Image>(camera_right_topic, 1, 
         std::bind(&StereoLoggerNode::callback_frame_right, this, std::placeholders::_1));
 
-    storage_folder = this->declare_parameter<std::string>("storage_folder", "/home/marco/xarm_devel/src/ROS2-Stereo-Logger/saved_images/");
+    storage_folder = this->declare_parameter<std::string>("storage_folder", "/home/marco/xarm_devel/src/stereo_ws/ROS2-Stereo-Logger/saved_images/");
 
     std::string cmd_to_empty_folder = "exec rm -r " + storage_folder + "*";
     system(cmd_to_empty_folder.c_str());

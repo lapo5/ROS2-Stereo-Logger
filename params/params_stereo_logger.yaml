@@ -5,6 +5,6 @@ stereo_logger:
       camera_left: /camera_left/raw_frame
       camera_right: /camera_right/raw_frame
 
-    storage_folder: /home/marco/xarm_devel/src/ROS2-Stereo-Logger/saved_images/
+    storage_folder: /home/marco/xarm_devel/src/stereo_ws/ROS2-Stereo-Logger/saved_images/
 
     hz_store_image: 0.5
