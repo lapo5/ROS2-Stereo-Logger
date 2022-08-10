@@ -137,8 +137,6 @@ dmypy.json
 # Cython debug symbols
 cython_debug/
 
-
-*.png
 .vscode
 
-saved_images/
+saved_images/*.png
