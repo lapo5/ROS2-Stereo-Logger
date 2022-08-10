@@ -139,4 +139,4 @@ cython_debug/
 
 .vscode
 
-saved_images/*.png
+saved_images/**.png
