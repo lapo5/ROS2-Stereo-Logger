@@ -22,6 +22,8 @@ find_package(rclcpp REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(cv_bridge REQUIRED)
 
+find_package(Boost COMPONENTS system filesystem REQUIRED)
+
 find_package(OpenCV REQUIRED )
 include_directories( ${OpenCV_INCLUDE_DIRS} )
 
@@ -51,7 +53,9 @@ ament_target_dependencies(stereo_logger
     ${THIS_PACKAGE_INCLUDE_DEPENDS})
 
 target_link_libraries( stereo_logger
-  ${OpenCV_LIBS}
+  ${OpenCV_LIBS} 
+  ${Boost_FILESYSTEM_LIBRARY}
+  ${Boost_SYSTEM_LIBRARY}
 )
 
 install(TARGETS stereo_logger

@@ -10,10 +10,14 @@
 
 #include <opencv2/opencv.hpp>
 
+#include <boost/filesystem.hpp>
+
 #ifndef STEREO_LOGGER_NODE_HEADER_FILE
 #define STEREO_LOGGER_NODE_HEADER_FILE
 
 using namespace std::chrono_literals;
+
+namespace boost_fs = boost::filesystem;
 
 class StereoLoggerNode : public rclcpp::Node {
 
@@ -32,8 +36,11 @@ private:
     void store_images();
 
     std::string storage_folder;
+    boost_fs::path storage_folder_path_left;
+    boost_fs::path storage_folder_path_right;
     std::string calibration_file;
     int incremental_index;
+    int padding;
 
     cv::Mat current_frame_left, current_frame_right;
 

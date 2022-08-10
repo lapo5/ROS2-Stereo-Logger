@@ -8,3 +8,5 @@ stereo_logger:
     storage_folder: /home/marco/xarm_devel/src/stereo_ws/ROS2-Stereo-Logger/saved_images/
 
     hz_store_image: 0.5
+
+    padding_image_name: 4
